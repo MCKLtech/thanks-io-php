@@ -39,7 +39,7 @@ For bugs and issues, open an issue in this repo and feel free to submit a PR. An
 
 This library is intended to work with Version 2.0 of the Thanks.io Public API
 
-## Users
+## Examples & Common Tasks
 
 ```php
 /* List Mailing Lists */
