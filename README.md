@@ -49,18 +49,29 @@ $client->mailingLists->list();
 $client->recipients->get(1234);
 
 /** Send a postcard */
+
 $message = "Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.";
 
-$recipients = [];
-$recipients[] = ['name' => 'Current Resident',
-                'address => '123 Main St',
-                'city' => 'New York',
-                'province' => 'NY',
-                'postal_code' => '55555',
-                'country' => 'US'];
+// You can alternatively provide the 'message_template' parameter 
 
-
-$client->send->postcard(6, 4, $message, $recipients)
+$payload = [
+    'handwriting_style' => 2,
+    'image_template' => 4,
+    'message' => $message
+];
+        
+$recipient = [
+    'name' => 'John Smith'
+    'address' => '123 Main St'
+    'city' => 'Manhattan'
+    'province' => 'NY'
+    'postal_code' => '55555',
+    'country' => 'US'
+ ];
+        
+$payload['recipients'][] = $recipient;
+        
+$client->send->postcard($payload);
 
 ```
 
